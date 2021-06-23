@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import logo from './GetImage.jpg';
 import './App.css';
 import { API } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
@@ -9,15 +8,6 @@ import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } fr
 const initialFormState = { name: '', description: '' }
 
 function App() {
-    return (
-    <div className="App">
-      <header>
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Mentors Only!</h1>
-      </header>
-      <AmplifySignOut />
-    </div>
-  );
   const [notes, setNotes] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
 
@@ -74,6 +64,4 @@ function App() {
 }
 
 export default withAuthenticator(App);
-
-
    
