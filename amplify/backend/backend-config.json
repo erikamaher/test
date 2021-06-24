@@ -1,10 +1,21 @@
 {
-  "auth": {
-    "testba301888": {
-      "service": "Cognito",
+  "auth": {},
+  "api": {
+    "notesapp": {
+      "service": "AppSync",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 2,
+              "description": "demo"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        }
+      }
     }
   }
 }
